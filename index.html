@@ -12,7 +12,9 @@
 <body>
 
     <header class="header">
-        <button class="btn-voltar" type="button" aria-label="Voltar">←</button>
+        <button class="btn-voltar" type="button" aria-label="Voltar">
+    <img src="img/icones/icone-voltar.png" alt="">
+        </button>
         <h1>Tutorial</h1>
 
         <button class="btn-ajuda" type="button" aria-label="Ajuda">?</button>
@@ -22,8 +24,8 @@
 
         <section class="tutorial-intro">
             <div class="intro-texto">
-                <h2>Melhorar fotos<br>à noite</h2>
-                <p>Aprenda como usar o modo Night<br>Vision para fotos mais claras e nítidas</p>
+                <h2>Melhorar fotos à noite</h2>
+                <p>Aprenda como usar o modo Night Vision para fotos mais claras e nítidas</p>
             </div>
             <img class="intro-ilustracao" src="img/hero-night.png" alt="Lua do modo Night Vision">
         </section>
@@ -43,7 +45,7 @@
                     <img class="imagem-passo" src="img/passo1-night.png" alt="Ícone do modo Night Vision">
                 </div>
                 <div class="conteudo-passo">
-                    <h3>Ative o modo<br>Night Vision</h3>
+                    <h3>Ative o modo Night Vision</h3>
                     <p>Toque no ícone de Lua para ativar o modo noturno.</p>
                 </div>
             </article>
@@ -54,7 +56,7 @@
                     <img class="imagem-passo" src="img/passo2-firme.png" alt="Pessoa segurando o celular firme">
                 </div>
                 <div class="conteudo-passo">
-                    <h3>Mantenha o<br>celular firme</h3>
+                    <h3>Mantenha o celular firme</h3>
                     <p>Segure o aparelho com firmeza por alguns segundos.</p>
                 </div>
             </article>
@@ -65,7 +67,7 @@
                     <img class="imagem-passo" src="img/passo3-luz.png" alt="Paisagem com luz intensa">
                 </div>
                 <div class="conteudo-passo">
-                    <h3>Evite luzes fortes<br>diretamente</h3>
+                    <h3>Evite luzes fortes diretamente</h3>
                     <p>Luzes muito fortes podem prejudicar o resultado da foto.</p>
                 </div>
             </article>
@@ -76,45 +78,95 @@
             <img class="icone-resultado" src="img/resultado-estrelas.png" alt="Estrelas douradas">
             <div>
                 <span>Resultado</span>
-                <h2>Fotos mais claras, nítidas e<br>com menos ruído.</h2>
+                <h2>Fotos mais claras, nítidas e com menos ruído.</h2>
             </div>
         </section>
 
 
         <section class="ajuda" id="chatJovi" aria-label="Chat com a Jovi">
-            <h2>Ainda precisa de ajuda?</h2>
+            <h2 class="sr-only">Ainda precisa de ajuda?</h2>
 
             <div class="chat-mensagens" id="chatMensagens" aria-live="polite"></div>
 
-
             <form class="chat-form" id="chatForm">
                 <input
-                    type="text"
-                    id="campoMensagem"
-                    placeholder="Digite sua dúvida..."
-                    autocomplete="off"
-                    aria-label="Digite sua dúvida para a Jovi"
+                type="text"
+                id="campoMensagem"
+                placeholder="Ainda precisa de ajuda?"
+                ...
                 >
 
+                <!-- Grupo dos três ícones de ações do chat. -->
                 <div class="chat-acoes" aria-label="Anexos e áudio">
-                    <!-- Botão 1: abre os arquivos do computador/telefone para escolher imagens. -->
-                    <label class="btn-chat-acao" for="arquivoImagem" title="Adicionar imagens" aria-label="Adicionar imagens">▧</label>
-                    <input id="arquivoImagem" type="file" accept="image/*" multiple hidden>
 
-                    <!-- Botão 2: mostra um campo para colar um link. -->
-                    <button class="btn-chat-acao" id="btnColarLink" type="button" title="Colar link" aria-label="Colar link">&lt;&gt;</button>
+                    <!-- Botão 1: abre os arquivos para escolher imagens. -->
+                    <label
+                        class="btn-chat-acao"
+                        for="arquivoImagem"
+                        title="Adicionar imagens"
+                        aria-label="Adicionar imagens"
+                    >
+                        <img src="img/icones/icone-imagem.png" alt="">
+                    </label>
 
-                    <!-- Botão 3: inicia/encerra a gravação pelo microfone do dispositivo. -->
-                    <button class="btn-chat-acao btn-microfone" type="button" aria-label="Gravar áudio" title="Gravar áudio">♩</button>
+                    <input
+                        id="arquivoImagem"
+                        type="file"
+                        accept="image/*"
+                        multiple
+                        hidden
+                    >
+
+                    <!-- Botão 2: mostra o campo para colar um link. -->
+                    <button
+                        class="btn-chat-acao"
+                        id="btnColarLink"
+                        type="button"
+                        title="Colar link"
+                        aria-label="Colar link"
+                    >
+                        <img src="img/icones/icone-link.png" alt="">
+                    </button>
+
+                    <!-- Botão 3: inicia ou encerra a gravação de áudio. -->
+                    <button
+                        class="btn-chat-acao btn-microfone"
+                        type="button"
+                        aria-label="Gravar áudio"
+                        title="Gravar áudio"
+                    >
+                        <img src="img/icones/icone-microfone.png" alt="">
+                    </button>
+
                 </div>
 
-
+                <!-- Campo exibido somente quando o usuário escolhe inserir um link. -->
                 <div class="link-chat" id="linkChat" hidden>
-                    <input type="url" id="campoLink" placeholder="Cole o link aqui..." autocomplete="off" aria-label="Link para enviar">
-                    <button type="button" id="btnEnviarLink" aria-label="Enviar link">✓</button>
+                    <input
+                        type="url"
+                        id="campoLink"
+                        placeholder="Cole o link aqui..."
+                        autocomplete="off"
+                        aria-label="Link para enviar"
+                    >
+                    <button
+                        type="button"
+                        id="btnEnviarLink"
+                        aria-label="Enviar link"
+                    >
+                        ✓
+                    </button>
                 </div>
 
-                <button class="ajuda-enviar" type="submit" aria-label="Enviar mensagem">↑</button>
+                <!-- Botão de envio da mensagem. -->
+                <button
+                    class="ajuda-enviar"
+                    type="submit"
+                    aria-label="Enviar mensagem"
+                >
+                    ↑
+                </button>
+
             </form>
 
 
@@ -129,7 +181,7 @@
     <nav class="navegacao" aria-label="Navegação principal">
         <button class="btn-menu" type="button" aria-label="Abrir menu">☰</button>
         <button class="btn-proximo" type="button" aria-label="Próximo passo">●</button>
-        <button class="btn-anterior" type="button" aria-label="Passo anterior">‹</button>
+        <button class="btn-anterior" type="button" aria-label="Passo anterior">›</button>
     </nav>
 
     <script src="js/script.js"></script>

@@ -89,6 +89,13 @@ const chatMensagens = document.querySelector("#chatMensagens");
 const chatForm = document.querySelector("#chatForm");
 const campoMensagem = document.querySelector("#campoMensagem");
 
+let jaEnviouMensagem = false;
+
+function marcarPrimeiraMensagem() {
+    if (jaEnviouMensagem) return;
+    jaEnviouMensagem = true;
+    campoMensagem.placeholder = "Digite sua dúvida...";
+}
 
 function adicionarMensagemUsuario(texto) {
     const mensagem = document.createElement("div");
@@ -151,6 +158,7 @@ chatForm.addEventListener("submit", function (evento) {
     if (texto === "") return;
 
     adicionarMensagemUsuario(texto);
+    marcarPrimeiraMensagem();
     campoMensagem.value = "";
     responderDepoisDeUmTempo(gerarRespostaJovi(texto));
 });
