@@ -473,6 +473,7 @@ button {
     height: 1.25rem;
     object-fit: contain;
     display: block;
+    filter: invert(1);
 }
 
 .btn-chat-acao:hover,

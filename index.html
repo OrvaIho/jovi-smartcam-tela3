@@ -106,7 +106,7 @@
                         title="Adicionar imagens"
                         aria-label="Adicionar imagens"
                     >
-                        <img src="img/icones/icone-imagem.png" alt="">
+                        <img src="img/icones/icone-imagem.svg" alt="">
                     </label>
 
                     <input
@@ -164,10 +164,11 @@
                     type="submit"
                     aria-label="Enviar mensagem"
                 >
-                    ↑
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 16V8"/>
+                        <path d="M8 12l4-4 4 4"/>
+                    </svg>
                 </button>
-
-            </form>
 
 
             <div class="audio-chat" id="audioChat" hidden>
@@ -181,7 +182,9 @@
     <nav class="navegacao" aria-label="Navegação principal">
         <button class="btn-menu" type="button" aria-label="Abrir menu">☰</button>
         <button class="btn-proximo" type="button" aria-label="Próximo passo">●</button>
-        <button class="btn-anterior" type="button" aria-label="Passo anterior">›</button>
+        <button class="btn-anterior" type="button" aria-label="Passo anterior">
+    <img src="img/icones/icone-voltar.png" alt="">
+</button>
     </nav>
 
     <script src="js/script.js"></script>
